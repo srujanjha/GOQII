@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">LogActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_logging">Logging</string>
+
+    <string-array name="intensity_array">
+        <item>Easy</item>
+        <item>Moderate</item>
+        <item>Intense</item>
+    </string-array>
+
+    <string name="title_activity_alarm">AlarmActivity</string>
+    <string name="title_activity_to_do">ToDoActivity</string>
+    <string name="left">&lt;</string>
+    <string name="right">&gt;</string>
+    
+    
+
+</resources>

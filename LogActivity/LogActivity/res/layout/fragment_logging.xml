@@ -1,0 +1,247 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:isScrollContainer="true" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        tools:context=".Logging" >
+
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+                <WebView
+                    android:id="@+id/Act1"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:alpha="0.5"
+                    android:tag="Running" >
+                </WebView>
+                <WebView
+                    android:id="@+id/Act2"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:alpha="0.5"
+                    android:clickable="true"
+                    android:tag="Walking" />
+
+                <WebView
+                    android:id="@+id/Act3"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:alpha="0.5"
+                    android:clickable="true"
+                    android:tag="Dancing" />
+
+                <WebView
+                    android:id="@+id/Act4"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:alpha="0.5"
+                    android:clickable="true"
+                    android:tag="Yoga" />
+
+                <WebView
+                    android:id="@+id/Act5"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:alpha="0.5"
+                    android:clickable="true"
+                    android:tag="Cycling" />
+
+                <WebView
+                    android:id="@+id/Act6"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:alpha="0.5"
+                    android:clickable="true"
+                    android:tag="Swimming" />
+
+                <WebView
+                    android:id="@+id/Act7"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:alpha="0.5"
+                    android:clickable="true"
+                    android:tag="Skipping" />
+
+                <WebView
+                    android:id="@+id/Act8"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:alpha="0.5"
+                    android:clickable="true"
+                    android:tag="Other" />
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <EditText
+            android:id="@+id/txtActivity"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:enabled="false"
+            android:hint="Enter activity"
+            android:textSize="25dp" >
+        </EditText>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Enter start and end time:"
+            android:textSize="25dp" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/Min"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Min"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/Max"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:text="Max"
+                android:textSize="15dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <com.example.logactivity.MyButton
+                    android:id="@+id/LMin"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:longClickable="true"
+                    android:onClick="setMinMax"
+                    android:tag="0"
+                    android:text="@string/left"
+                    android:textSize="10dp" />
+
+                <com.example.logactivity.MyButton
+                    android:id="@+id/RMin"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:longClickable="true"
+                    android:onClick="setMinMax"
+                    android:tag="1"
+                    android:text="@string/right"
+                    android:textSize="10dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:orientation="horizontal" >
+
+                <com.example.logactivity.MyButton
+                    android:id="@+id/LMax"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:longClickable="true"
+                    android:onClick="setMinMax"
+                    android:tag="2"
+                    android:text="@string/left"
+                    android:textSize="10dp" />
+
+                <com.example.logactivity.MyButton
+                    android:id="@+id/RMax"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:longClickable="true"
+                    android:onClick="setMinMax"
+                    android:tag="3"
+                    android:text="@string/right"
+                    android:textSize="10dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/seek"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+        </RelativeLayout>
+
+        <Spinner
+            android:id="@+id/intensity_spinner"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="25dp" />
+
+        <EditText
+            android:id="@+id/caloriesText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="Enter calories"
+            android:inputType="number"
+            android:textSize="25dp" />
+
+        <RadioGroup
+            android:id="@+id/rg"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <RadioButton
+                android:id="@+id/rg1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Log This" />
+
+            <RadioButton
+                android:id="@+id/rg2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add to ToDo" />
+
+            <RadioButton
+                android:id="@+id/rg3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Both" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="14dp"
+            android:layout_marginTop="10dp"
+            android:onClick="addTaskNow"
+            android:text="Add"
+            android:textSize="25dp" />
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<script type="text/javascript" src="jquery.js"></script>
+		<script type="text/javascript" src="highcharts.js"></script>
+		<script type="text/javascript" src="highcharts-3d.js"></script>
+		<script type="text/javascript" src="data.js"></script>
+		<style type="text/css">
+			${demo.css}
+		</style>
+		<script type="text/javascript">
+		//draw('[[\"0-2\",2],[\"2-4\",3],[\"4-6\",3],[\"6-8\",3]]','{"width":500,"chart":"column","thd":true}');
+			function draw(data,format) {
+			var obj = JSON.parse(format);
+			var myObj = JSON.parse(data);
+			
+			arrayfromjava=document.myAppl
+				$('#container').highcharts({
+					chart: {
+						type: obj.chart,
+						pinchType: 'x',
+						zoomType: 'x',
+						panning: true,
+						spacingRight: 0,
+						spacingLeft: 53,
+						marginRight: 0,
+						marginLeft: 53,
+						width: obj.width,
+						options3d: {
+							enabled: obj.thd,
+							alpha: 15,
+							beta: 15,
+							depth: 50
+						}
+					},
+					xAxis: {
+						type: 'category',
+						title: {
+							text: 'Time: (hours)'
+						},
+						labels: {
+							rotation: -60,
+							style: {
+								fontSize: '13px',
+								fontFamily: 'Verdana, sans-serif'
+							}
+						}
+					},
+					yAxis: {
+						min: 0,
+						title: {
+							text: 'Number of Steps: (count)'
+						}
+					},
+					legend: {
+						enabled: false
+					},
+					tooltip: {
+						pointFormat: 'Number of Steps: <b>{point.y:.1f} count</b>',
+					},
+					series: [{
+						name: 'Number of Steps:',
+						data: myObj,
+						dataLabels: {
+							enabled: true,
+							rotation: -90,
+							color: '#FFFFFF',
+							align: 'right',
+							x: 4,
+							y: 10,
+							style: {
+								fontSize: '13px',
+								fontFamily: 'Verdana, sans-serif',
+								textShadow: '0 0 3px black'
+							}
+						}
+					}]
+				});
+			}
+		</script>
+	</head>
+	<body>
+		<div id="container" >
+		</div>
+	</body>
+</html>
